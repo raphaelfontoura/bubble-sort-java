@@ -3,12 +3,15 @@
  */
 package com.tinnova.bubble_sort;
 
+import com.tinnova.bubble_sort.core.BubbleSort;
+
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        var orderedVector = BubbleSort.order(new Integer[]{5, 3, 2, 4, 7, 1, 0, 6});
+        for (int value :
+                orderedVector) {
+            System.out.print(value + "-");
+        }
     }
 }
