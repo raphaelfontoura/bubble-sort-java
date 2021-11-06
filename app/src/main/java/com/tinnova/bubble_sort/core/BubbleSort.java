@@ -1,5 +1,6 @@
 package com.tinnova.bubble_sort.core;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class BubbleSort{
@@ -23,22 +24,9 @@ public class BubbleSort{
     }
 
     public static List<Integer> order(List<Integer> list) {
-
-        var limitFor = list.size() - 1;
-        boolean swap;
-        do {
-            swap = false;
-            for (int count = 0; count < limitFor; count++) {
-                if (list.get(count) > list.get(count+1)) {
-                    var minorValue = list.get(count+1);
-                    list.set(count+1, list.get(count));
-                    list.set(count, minorValue);
-                    swap = true;
-                }
-            }
-            limitFor--;
-        } while (swap);
-        return list;
+        Integer[] vector = list.toArray(new Integer[0]);
+        var orderedVector = order(vector);
+        return Arrays.asList(orderedVector);
     }
 
 }
